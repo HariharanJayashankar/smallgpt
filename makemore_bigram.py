@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+from makemore import *
 
 
 def bigram_lookup(words):
@@ -84,8 +85,7 @@ def sampleNames(P, nwords=50):
 if __name__ == '__main__':
 
 
-    with open('names.txt', 'r') as f:
-        words = f.read().splitlines()
+    words = readdata('names.txt')
 
     # ==  bigram model (garbage but useful exercise) == #
     stoi, itos = bigram_lookup(words)
